@@ -2,8 +2,6 @@ import os
 import spotipy
 import time
 import subprocess
-import keyboard
-import mouse
 import pygetwindow as gw
 from subprocess import Popen
 from dotenv import load_dotenv
@@ -53,7 +51,7 @@ def restart_spotify(path):
         subprocess.call(['taskkill','/F','/IM','Spotify.exe'])
     except:
         pass
-    time.sleep(.2)
+    time.sleep(.5)
     try:
         if os.path.isfile(path):
             subprocess.Popen(path, shell=True)
@@ -208,12 +206,11 @@ def main():
             path_file.close()
         else:
             run_app = False
-        os.system('cls')
+        os.system('cls' if os.name == 'nt' else 'clear')
 
 
-    
-        
-main()
+if __name__ == '__main__':        
+    main()
         
 
             
