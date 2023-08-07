@@ -62,6 +62,7 @@ def restart_spotify(path):
     except Exception as e:
         print(e)
         return False
+    time.sleep(3)
     win = gw.getWindowsWithTitle('Spotify Free')
     if win != []:
         try:
